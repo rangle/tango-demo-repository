@@ -1,0 +1,20 @@
+{
+  "name": "@repo/foundations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.ts",
+    "./styles": "./styles/index.scss"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "registry": "localhost:4873",
+  "devDependencies": {
+    "radius-toolkit": "^0.6.2"
+  }
+}
