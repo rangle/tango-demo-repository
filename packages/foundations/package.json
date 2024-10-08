@@ -5,10 +5,10 @@
   "main": "index.js",
   "exports": {
     ".": "./index.ts",
-    "./styles": "./styles/index.scss"
+    "./styles": "./styles/index.css"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "radius-toolkit generate tokens.json -o styles/index.css"
   },
   "keywords": [],
   "author": "",

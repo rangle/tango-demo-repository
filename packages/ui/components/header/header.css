@@ -1,3 +1,5 @@
+@import '@repo/foundations/styles';
+
 .storybook-header {
   display: flex;
   justify-content: space-between;
@@ -21,7 +23,7 @@
   line-height: 1;
 }
 
-.storybook-header button + button {
+.storybook-header button+button {
   margin-left: 10px;
 }
 
