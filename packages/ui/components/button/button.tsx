@@ -1,10 +1,8 @@
-import React from 'react';
-
 import './button.css';
 
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
-  variant?: 'primary' | 'error';
+  variant?: 'primary' | 'secondary' | 'error';
   /** How large should the button be? */
   size?: 'small' | 'medium' | 'large';
   /** Button contents */
@@ -15,12 +13,12 @@ export interface ButtonProps {
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  variant = 'primary',
+  variant = 'secondary',
   size = 'medium',
   label,
   ...props
 }: ButtonProps) => {
-  const mode = variant === 'primary' ? 'ds-button--primary' : 'ds-button--error';
+  const mode = variant === 'primary' ? 'ds-button--primary' : variant === 'secondary' ? 'ds-button--secondary' : 'ds-button--error';
   return (
     <button
       type="button"

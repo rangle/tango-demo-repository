@@ -13,6 +13,7 @@ export const ThemeDecorator: Decorator = (Story, context) => {
             brand,
             mode,
             density,
+            document.body.style.backgroundColor = 'var(--semantic-static-color-background-default-default)'
         ].join(' ');
     }, [brand, mode, density]);
     return <Story />;

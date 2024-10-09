@@ -16,9 +16,14 @@
   /* this layer requires a class to be added to a section or the body */
   .light {
     --color-modes: light;
-    --semantic-action-color-foreground-error-strong: var(--brand-color-error-700);
-    --semantic-action-color-border-strong: var(--brand-color-error-700);
-    --semantic-action-color-border-error-strong: var(--brand-color-error-700);
+    --semantic-action-text-color-error: var(--brand-color-error-700);
+    --semantic-action-text-color-secondary: var(--brand-color-primary-500);
+    --semantic-action-text-color-default: var(--brand-interactive-neutral-white);
+    --semantic-action-background-color-default: var(--brand-color-primary-500);
+    --semantic-action-background-color-secondary: var(--brand-interactive-neutral-white);
+    --semantic-action-border-color-default: var(--brand-color-neutral-transparent);
+    --semantic-action-border-color-error: var(--brand-color-error-700);
+    --semantic-action-border-color-secondary: var(--brand-color-primary-500);
     --semantic-static-color-foreground-default-strong: var(--brand-color-neutral-black);
     --semantic-static-color-foreground-default-default: var(--brand-color-neutral-700);
     --semantic-static-color-border-strong: var(--brand-color-error-700);
@@ -35,9 +40,14 @@
   /* this layer requires a class to be added to a section or the body */
   .dark {
     --color-modes: dark;
-    --semantic-action-color-foreground-error-strong: rgba(255, 77, 77, 1.00);
-    --semantic-action-color-border-strong: rgba(255, 77, 77, 1.00);
-    --semantic-action-color-border-error-strong: rgba(255, 77, 77, 1.00);
+    --semantic-action-text-color-error: rgba(255, 77, 77, 1.00);
+    --semantic-action-text-color-secondary: var(--brand-color-primary-500);
+    --semantic-action-text-color-default: var(--brand-color-neutral-white);
+    --semantic-action-background-color-default: var(--brand-color-neutral-800);
+    --semantic-action-background-color-secondary: var(--brand-color-neutral-800);
+    --semantic-action-border-color-default: var(--brand-color-primary-500);
+    --semantic-action-border-color-error: rgba(255, 77, 77, 1.00);
+    --semantic-action-border-color-secondary: var(--brand-color-primary-500);
     --semantic-static-color-foreground-default-strong: var(--brand-color-neutral-white);
     --semantic-static-color-foreground-default-default: var(--brand-color-neutral-300);
     --semantic-static-color-border-strong: rgba(255, 77, 77, 1.00);
@@ -95,6 +105,10 @@
       --brand-font-weight-regular: 400;
       --brand-font-weight-bold: 700;
       --brand-line-height-3: 12;
+      --brand-paragraph-spacing-3: 12;
+      --brand-paragraph-spacing-4: 16;
+      --brand-paragraph-spacing-5: 20;
+      --brand-paragraph-spacing-6: 24;
       --brand-line-height-4: 16;
       --brand-line-height-5: 20;
       --brand-line-height-6: 24;
@@ -113,6 +127,7 @@
       --brand-border-radius-xs: 2px;
       --brand-border-radius-sm: 4px;
       --brand-border-radius-md: 8px;
+      --brand-color-neutral-transparent: rgba(170, 170, 170, 0.00);
     }
   
 }
@@ -187,7 +202,37 @@
     --breakpoints: mobile;
     --button: mobile;
     --card: mobile;
-    --typography-button-label-size-lg: var(--brand-font-size-sm);
+    --action-font-size-label: var(--brand-font-size-sm);
+    --action-font-weight-label: var(--brand-font-weight-bold);
+    --action-line-height-label: var(--brand-line-height-4);
+    --action-paragraph-spacing-label: var(--brand-paragraph-spacing-4);
+    --action-tracking-label: var(--brand-tracking-regular);
+    --static-font-size-header: var(--brand-font-size-regular);
+    --static-font-size-text: var(--brand-font-size-sm);
+    --static-font-weight-header: var(--brand-font-weight-bold);
+    --static-font-weight-text: var(--brand-font-weight-regular);
+    --static-line-height-header: var(--brand-line-height-4);
+    --static-line-height-text: var(--brand-line-height-4);
+    --static-paragraph-spacing-default: var(--brand-paragraph-spacing-4);
+    --static-tracking-default: var(--brand-tracking-regular);
+    --static-gap-xxs: var(--brand-spacing-40);
+    --static-gap-xs: var(--brand-spacing-60);
+    --static-gap-sm: var(--brand-spacing-80);
+    --static-gap-default: var(--brand-spacing-160);
+    --action-padding-none: var(--brand-spacing-none);
+    --action-padding-xxs: var(--brand-spacing-20);
+    --action-padding-xs: var(--brand-spacing-40);
+    --action-padding-sm: var(--brand-spacing-60);
+    --action-padding-default: var(--brand-spacing-80);
+    --action-gap-none: var(--brand-spacing-none);
+    --action-gap-xxs: var(--brand-spacing-20);
+    --action-gap-xs: var(--brand-spacing-40);
+    --action-gap-sm: var(--brand-spacing-60);
+    --action-gap-default: var(--brand-spacing-80);
+    --static-padding-xxs: var(--brand-spacing-40);
+    --static-padding-xs: var(--brand-spacing-60);
+    --static-padding-sm: var(--brand-spacing-80);
+    --static-padding-default: var(--brand-spacing-160);
   }
 
 }
@@ -200,7 +245,37 @@
     --breakpoints: desktop;
     --button: desktop;
     --card: desktop;
-    --typography-button-label-size-lg: var(--brand-font-size-lg);
+    --action-font-size-label: var(--brand-font-size-regular);
+    --action-font-weight-label: var(--brand-font-weight-bold);
+    --action-line-height-label: var(--brand-line-height-4);
+    --action-paragraph-spacing-label: var(--brand-paragraph-spacing-4);
+    --action-tracking-label: var(--brand-tracking-regular);
+    --static-font-size-header: var(--brand-font-size-lg);
+    --static-font-size-text: var(--brand-font-size-regular);
+    --static-font-weight-header: var(--brand-font-weight-bold);
+    --static-font-weight-text: var(--brand-font-weight-regular);
+    --static-line-height-header: var(--brand-line-height-4);
+    --static-line-height-text: var(--brand-line-height-4);
+    --static-paragraph-spacing-default: var(--brand-paragraph-spacing-4);
+    --static-tracking-default: var(--brand-tracking-regular);
+    --static-gap-xxs: var(--brand-spacing-60);
+    --static-gap-xs: var(--brand-spacing-80);
+    --static-gap-sm: var(--brand-spacing-80);
+    --static-gap-default: var(--brand-spacing-160);
+    --action-padding-none: var(--brand-spacing-none);
+    --action-padding-xxs: var(--brand-spacing-20);
+    --action-padding-xs: var(--brand-spacing-60);
+    --action-padding-sm: var(--brand-spacing-80);
+    --action-padding-default: var(--brand-spacing-160);
+    --action-gap-none: var(--brand-spacing-none);
+    --action-gap-xxs: var(--brand-spacing-20);
+    --action-gap-xs: var(--brand-spacing-60);
+    --action-gap-sm: var(--brand-spacing-80);
+    --action-gap-default: var(--brand-spacing-160);
+    --static-padding-xxs: var(--brand-spacing-60);
+    --static-padding-xs: var(--brand-spacing-80);
+    --static-padding-sm: var(--brand-spacing-80);
+    --static-padding-default: var(--brand-spacing-160);
   }
 
 }
