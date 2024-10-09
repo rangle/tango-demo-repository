@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
-import { join, dirname } from "path";
+import { join, dirname, resolve } from "path";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -11,7 +11,7 @@ function getAbsolutePath(value: string): any {
 }
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../../../packages/ui/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    resolve(__dirname, "../../../packages/ui/components/button/button.stories.ts")
   ],
   addons: [
     getAbsolutePath("@storybook/addon-onboarding"),

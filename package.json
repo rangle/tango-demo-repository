@@ -5,7 +5,7 @@
     "dev": "turbo dev",
     "storybook": "turbo -F demo run storybook",
     "chromatic": "turbo -F demo run chromatic",
-    "build-storybook": "turbo -F demo run build-storybook",
+    "build-storybook": "turbo -F demo run build-storybook --",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

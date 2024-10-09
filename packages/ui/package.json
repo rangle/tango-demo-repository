@@ -4,8 +4,8 @@
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./Button": "./components/Button.tsx",
-    "./Header": "./components/Header.tsx"
+    "./button": "./components/button/button.tsx",
+    "./header": "./components/header/header.tsx"
   },
   "license": "MIT",
   "scripts": {

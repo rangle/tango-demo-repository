@@ -13,10 +13,10 @@
     "chromatic": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@repo/foundations": "workspace:*",
     "@repo/ui": "workspace:*",
-    "@repo/foundations": "workspace:*"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
@@ -37,6 +37,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-plugin-storybook": "^0.9.0",
+    "glob": "^11.0.0",
     "globals": "^15.9.0",
     "storybook": "^8.3.5",
     "typescript": "^5.5.3",
