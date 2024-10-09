@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run:
-          - npm install -g pnpm
-          - pnpm install --frozen-lockfile
+        run: |
+          npm install -g pnpm
+          pnpm install --frozen-lockfile
       - name: Build
         run: pnpm build
       - name: Run Chromatic
