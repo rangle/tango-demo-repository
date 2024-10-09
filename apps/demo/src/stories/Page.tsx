@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header } from '@repo/ui/Header';
+import { Header } from '@repo/ui';
 import './page.css';
 
 type User = {
@@ -19,7 +19,7 @@ export const Page: React.FC = () => {
         onCreateAccount={() => setUser({ name: 'Jane Doe' })}
       />
 
-      <section className="storybook-page">
+      <section className="demo-page">
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{' '}

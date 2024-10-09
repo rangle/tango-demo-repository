@@ -1,14 +1,14 @@
 {
   "name": "@repo/foundations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "exports": {
     ".": "./index.ts",
-    "./styles": "./styles/index.scss"
+    "./styles": "./styles/index.css"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "radius-toolkit generate tokens.json -o styles/index.css"
   },
   "keywords": [],
   "author": "",

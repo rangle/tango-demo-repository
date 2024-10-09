@@ -1,0 +1,207 @@
+
+@layer color-modes--light,color-modes--dark,brand--brand-1,density--default,density--compact,breakpoints--mobile,breakpoints--desktop,defaultLayers;
+
+@layer defaultLayers {
+  /* Generated to allow the site to have defaults derived by Designer decisions */
+  :root {
+    --defaultLayers: light dark brand-brand-1 default compact mobile desktop;
+  }
+}
+
+
+
+@layer color-modes--light {
+  
+  /* light */
+  /* this layer requires a class to be added to a section or the body */
+  .light {
+    --color-modes: light;
+    --semantic-action-color-foreground-error-strong: var(--brand-color-error-700);
+    --semantic-action-color-border-strong: var(--brand-color-error-700);
+    --semantic-action-color-border-error-strong: var(--brand-color-error-700);
+    --semantic-static-color-foreground-default-strong: var(--brand-color-neutral-black);
+    --semantic-static-color-foreground-default-default: var(--brand-color-neutral-700);
+    --semantic-static-color-border-strong: var(--brand-color-error-700);
+    --semantic-static-color-border-default-strong: var(--brand-color-neutral-300);
+    --semantic-static-color-background-default-default: var(--brand-color-neutral-white);
+    --semantic-static-color-background-default-muted: var(--brand-color-neutral-100);
+  }
+
+}
+
+@layer color-modes--dark {
+  
+  /* dark */
+  /* this layer requires a class to be added to a section or the body */
+  .dark {
+    --color-modes: dark;
+    --semantic-action-color-foreground-error-strong: rgba(255, 77, 77, 1.00);
+    --semantic-action-color-border-strong: rgba(255, 77, 77, 1.00);
+    --semantic-action-color-border-error-strong: rgba(255, 77, 77, 1.00);
+    --semantic-static-color-foreground-default-strong: var(--brand-color-neutral-white);
+    --semantic-static-color-foreground-default-default: var(--brand-color-neutral-300);
+    --semantic-static-color-border-strong: rgba(255, 77, 77, 1.00);
+    --semantic-static-color-border-default-strong: var(--brand-color-neutral-700);
+    --semantic-static-color-background-default-default: var(--brand-color-neutral-800);
+    --semantic-static-color-background-default-muted: var(--brand-color-neutral-900);
+  }
+
+}
+
+@layer brand--brand-1 {
+  
+    :root {
+      --brand-color-neutral-white: rgba(255, 255, 255, 1.00);
+      --brand-interactive-neutral-white: rgba(255, 255, 255, 1.00);
+      --brand-interactive-neutral-100: rgba(241, 241, 241, 1.00);
+      --brand-interactive-neutral-300: rgba(214, 214, 214, 1.00);
+      --brand-interactive-neutral-700: rgba(87, 87, 87, 1.00);
+      --brand-interactive-neutral-800: rgba(40, 40, 40, 1.00);
+      --brand-interactive-neutral-black: rgba(0, 0, 0, 1.00);
+      --brand-interactive-primary-500: rgba(26, 34, 242, 1.00);
+      --brand-interactive-error-700: rgba(216, 16, 16, 1.00);
+      --brand-color-primary-500: rgba(26, 34, 242, 1.00);
+      --brand-color-neutral-100: rgba(241, 241, 241, 1.00);
+      --brand-color-neutral-300: rgba(214, 214, 214, 1.00);
+      --brand-color-neutral-700: rgba(87, 87, 87, 1.00);
+      --brand-color-neutral-800: rgba(55, 55, 55, 1.00);
+      --brand-color-neutral-900: rgba(40, 40, 40, 1.00);
+      --brand-color-neutral-black: rgba(0, 0, 0, 1.00);
+      --brand-spacing-none: 0px;
+      --brand-spacing-20: 2px;
+      --brand-size-20: 2px;
+      --brand-size-40: 4px;
+      --brand-size-60: 6px;
+      --brand-size-80: 8px;
+      --brand-size-160: 16px;
+      --brand-size-200: 20px;
+      --brand-size-240: 24px;
+      --brand-size-360: 36px;
+      --brand-spacing-40: 4px;
+      --brand-spacing-60: 6px;
+      --brand-spacing-80: 8px;
+      --brand-spacing-160: 16px;
+      --brand-spacing-200: 20px;
+      --brand-spacing-240: 24px;
+      --brand-spacing-360: 36px;
+      --brand-font-family-sans: "DM Sans";
+      --brand-font-size-xxs: 10;
+      --brand-font-size-xs: 12;
+      --brand-font-size-sm: 14;
+      --brand-font-size-regular: 16;
+      --brand-font-size-lg: 20;
+      --brand-font-size-xl: 24;
+      --brand-font-size-xxl: 36;
+      --brand-font-weight-regular: 400;
+      --brand-font-weight-bold: 700;
+      --brand-line-height-3: 12;
+      --brand-line-height-4: 16;
+      --brand-line-height-5: 20;
+      --brand-line-height-6: 24;
+      --brand-tracking-tightest: -1;
+      --brand-tracking-tighter: -0.800000011920929;
+      --brand-tracking-tight: -0.4000000059604645;
+      --brand-tracking-regular: 0;
+      --brand-tracking-wide: 0.4000000059604645;
+      --brand-tracking-wider: 0.800000011920929;
+      --brand-tracking-widest: 1;
+      --brand-color-error-700: rgba(216, 16, 16, 1.00);
+      --brand-border-width-05: 0.5px;
+      --brand-border-width-10: 1px;
+      --brand-border-width-20: 2px;
+      --brand-border-radius-none: 0px;
+      --brand-border-radius-xs: 2px;
+      --brand-border-radius-sm: 4px;
+      --brand-border-radius-md: 8px;
+    }
+  
+}
+
+@layer density--default {
+  
+  /* default */
+  /* this layer requires a class to be added to a section or the body */
+  .default {
+    --density: default;
+    --density-action-spacing-padding-xs: var(--brand-spacing-20);
+    --density-action-spacing-padding-sm: var(--brand-spacing-40);
+    --density-action-spacing-padding-md: var(--brand-spacing-80);
+    --density-action-spacing-padding-lg: var(--brand-spacing-160);
+    --density-action-spacing-padding-xl: var(--brand-spacing-240);
+    --density-action-spacing-gap-xs: var(--brand-spacing-20);
+    --density-action-spacing-gap-sm: var(--brand-spacing-40);
+    --density-action-spacing-gap-md: var(--brand-spacing-80);
+    --density-action-spacing-gap-lg: var(--brand-spacing-160);
+    --density-action-spacing-gap-xl: var(--brand-spacing-240);
+    --density-action-spacing-icon-none: var(--brand-spacing-none);
+    --density-action-spacing-icon-sm: var(--brand-spacing-40);
+    --density-action-spacing-icon-md: var(--brand-spacing-80);
+    --density-action-spacing-icon-lg: var(--brand-spacing-160);
+    --density-action-spacing-icon-xl: var(--brand-spacing-240);
+    --density-action-border-radius-none: var(--brand-border-radius-none);
+    --density-action-border-radius-sm: var(--brand-border-radius-sm);
+    --density-action-border-radius-default: var(--brand-border-radius-md);
+    --density-action-border-width-thin: var(--brand-border-width-05);
+    --density-action-border-width-default: var(--brand-border-width-10);
+    --density-action-border-width-thick: var(--brand-border-width-20);
+  }
+
+}
+
+@layer density--compact {
+  
+  /* compact */
+  /* this layer requires a class to be added to a section or the body */
+  .compact {
+    --density: compact;
+    --density-action-spacing-padding-xs: 0px;
+    --density-action-spacing-padding-sm: 0px;
+    --density-action-spacing-padding-md: 0px;
+    --density-action-spacing-padding-lg: 0px;
+    --density-action-spacing-padding-xl: 0px;
+    --density-action-spacing-gap-xs: 0px;
+    --density-action-spacing-gap-sm: 0px;
+    --density-action-spacing-gap-md: 0px;
+    --density-action-spacing-gap-lg: 0px;
+    --density-action-spacing-gap-xl: 0px;
+    --density-action-spacing-icon-none: 0px;
+    --density-action-spacing-icon-sm: 0px;
+    --density-action-spacing-icon-md: 0px;
+    --density-action-spacing-icon-lg: 0px;
+    --density-action-spacing-icon-xl: 0px;
+    --density-action-border-radius-none: 0px;
+    --density-action-border-radius-sm: 0px;
+    --density-action-border-radius-default: 0px;
+    --density-action-border-width-thin: 0px;
+    --density-action-border-width-default: 0px;
+    --density-action-border-width-thick: 0px;
+  }
+
+}
+
+@layer breakpoints--mobile {
+  
+  /* mobile */
+  /* this layer requires a class to be added to a section or the body */
+  .mobile {
+    --breakpoints: mobile;
+    --button: mobile;
+    --card: mobile;
+    --typography-button-label-size-lg: var(--brand-font-size-sm);
+  }
+
+}
+
+@layer breakpoints--desktop {
+  
+  /* desktop */
+  /* this layer requires a class to be added to a section or the body */
+  .desktop {
+    --breakpoints: desktop;
+    --button: desktop;
+    --card: desktop;
+    --typography-button-label-size-lg: var(--brand-font-size-lg);
+  }
+
+}
+  

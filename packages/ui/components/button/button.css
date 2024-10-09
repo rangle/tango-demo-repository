@@ -1,0 +1,36 @@
+@import '@repo/foundations/styles';
+
+.ds-button {
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--density-action-border-radius-default);
+  font-weight: var(--brand-font-weight-bold);
+  font-family: var(--brand-font-family-sans), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.ds-button--primary {
+  background-color: var(--brand-interactive-primary-500);
+  color: var(--semantic-static-color-foreground-default-strong);
+}
+
+.ds-button--secondary {
+  box-shadow: inset 0 0 0 var(--density-action-border-width-default) var(--semantic-static-color-border-default-strong);
+  background-color: var(--semantic-static-color-background-default-default);
+  color: var(--semantic-static-color-foreground-default-default);
+}
+
+.ds-button--small {
+  padding: var(--density-action-spacing-padding-sm) var(--density-action-spacing-padding-md);
+  font-size: var(--brand-font-size-xs);
+}
+
+.ds-button--medium {
+  padding: var(--density-action-spacing-padding-md) var(--density-action-spacing-padding-lg);
+  font-size: var(--brand-font-size-sm);
+}
+
+.ds-button--large {
+  padding: var(--density-action-spacing-padding-lg) var(--density-action-spacing-padding-xl);
+  font-size: var(--typography-button-label-size-lg);
+}
