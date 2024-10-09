@@ -1,4 +1,4 @@
-.storybook-page {
+.demo-page {
   margin: 0 auto;
   padding: 48px 20px;
   max-width: 600px;
@@ -8,7 +8,7 @@
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.storybook-page h2 {
+.demo-page h2 {
   display: inline-block;
   vertical-align: top;
   margin: 0 0 4px;
@@ -17,25 +17,25 @@
   line-height: 1;
 }
 
-.storybook-page p {
+.demo-page p {
   margin: 1em 0;
 }
 
-.storybook-page a {
+.demo-page a {
   color: #1ea7fd;
   text-decoration: none;
 }
 
-.storybook-page ul {
+.demo-page ul {
   margin: 1em 0;
   padding-left: 30px;
 }
 
-.storybook-page li {
+.demo-page li {
   margin-bottom: 8px;
 }
 
-.storybook-page .tip {
+.demo-page .tip {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
@@ -48,14 +48,14 @@
   line-height: 12px;
 }
 
-.storybook-page .tip-wrapper {
+.demo-page .tip-wrapper {
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: 13px;
   line-height: 20px;
 }
 
-.storybook-page .tip-wrapper svg {
+.demo-page .tip-wrapper svg {
   display: inline-block;
   vertical-align: top;
   margin-top: 3px;
@@ -64,6 +64,6 @@
   height: 12px;
 }
 
-.storybook-page .tip-wrapper svg path {
+.demo-page .tip-wrapper svg path {
   fill: #1ea7fd;
 }
