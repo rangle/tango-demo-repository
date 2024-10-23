@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      affected: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            foundations: 'packages/foundations/**'
+            ui: 'packages/ui/**'
+            storybook: 'apps/storybook/**'
+            demo: 'apps/demo/**'
+            eslint-config: 'packages/eslint-config/**'
+            typescript-config: 'packages/typescript-config/**'
+
+  lint-build-test:
+    needs: detect-changes
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: ${{ fromJSON(needs.detect-changes.outputs.affected) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint -w @avinode-ds/${{ matrix.package }}
+
+      - name: Build
+        run: npm run build -w @avinode-ds/${{ matrix.package }}
+
+      - name: Test
+        run: npm test -w @avinode-ds/${{ matrix.package }}
+        if: ${{ matrix.package != 'eslint-config' && matrix.package != 'typescript-config' }}
