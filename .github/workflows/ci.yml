@@ -10,7 +10,7 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      affected: ${{ steps.filter.outputs.changes }}
+      affected: ${{ steps.set-affected.outputs.affected }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -23,13 +23,25 @@ jobs:
             demo: 'apps/demo/**'
             eslint-config: 'packages/eslint-config/**'
             typescript-config: 'packages/typescript-config/**'
+      - id: set-affected
+        run: |
+          if [[ "${{ steps.filter.outputs.foundations }}" == "true" || \
+                "${{ steps.filter.outputs.ui }}" == "true" || \
+                "${{ steps.filter.outputs.eslint-config }}" == "true" || \
+                "${{ steps.filter.outputs.typescript-config }}" == "true" ]]; then
+            echo "affected=all" >> $GITHUB_OUTPUT
+          elif [[ "${{ steps.filter.outputs.storybook }}" == "true" ]]; then
+            echo "affected=storybook" >> $GITHUB_OUTPUT
+          elif [[ "${{ steps.filter.outputs.demo }}" == "true" ]]; then
+            echo "affected=demo" >> $GITHUB_OUTPUT
+          else
+            echo "affected=none" >> $GITHUB_OUTPUT
+          fi
 
   lint-build-test:
     needs: detect-changes
+    if: needs.detect-changes.outputs.affected != 'none'
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package: ${{ fromJSON(needs.detect-changes.outputs.affected) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,12 +52,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint -w @avinode-ds/${{ matrix.package }}
+      - name: Lint, Build, and Test All
+        if: needs.detect-changes.outputs.affected == 'all'
+        run: |
+          npm run lint
+          npm run build
+          npm test
 
-      - name: Build
-        run: npm run build -w @avinode-ds/${{ matrix.package }}
+      - name: Lint, Build, and Test Storybook
+        if: needs.detect-changes.outputs.affected == 'storybook'
+        run: |
+          npm run lint -w @avinode-ds/storybook
+          npm run build -w @avinode-ds/storybook
+          npm test -w @avinode-ds/storybook
 
-      - name: Test
-        run: npm test -w @avinode-ds/${{ matrix.package }}
-        if: ${{ matrix.package != 'eslint-config' && matrix.package != 'typescript-config' }}
+      - name: Lint, Build, and Test Demo
+        if: needs.detect-changes.outputs.affected == 'demo'
+        run: |
+          npm run lint -w @avinode-ds/demo
+          npm run build -w @avinode-ds/demo
+          npm test -w @avinode-ds/demo
