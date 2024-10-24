@@ -49,7 +49,9 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile 
+        run: |
+          npm install -g pnpm
+          pnpm install --frozen-lockfile
 
       - name: Lint, Build, and Test All
         if: needs.detect-changes.outputs.affected == 'all'
