@@ -49,25 +49,25 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm ci
 
       - name: Lint, Build, and Test All
         if: needs.detect-changes.outputs.affected == 'all'
         run: |
-          npm run lint
-          npm run build
-          npm test
+          pnpm run lint
+          pnpm run build
+          pnpm test
 
       - name: Lint, Build, and Test Storybook
         if: needs.detect-changes.outputs.affected == 'storybook'
         run: |
-          npm run lint -w @avinode-ds/storybook
-          npm run build -w @avinode-ds/storybook
-          npm test -w @avinode-ds/storybook
+          pnpm run lint -w @avinode-ds/storybook
+          pnpm run build -w @avinode-ds/storybook
+          pnpm test -w @avinode-ds/storybook
 
       - name: Lint, Build, and Test Demo
         if: needs.detect-changes.outputs.affected == 'demo'
         run: |
-          npm run lint -w @avinode-ds/demo
-          npm run build -w @avinode-ds/demo
-          npm test -w @avinode-ds/demo
+          pnpm run lint -w @avinode-ds/demo
+          pnpm run build -w @avinode-ds/demo
+          pnpm test -w @avinode-ds/demo
