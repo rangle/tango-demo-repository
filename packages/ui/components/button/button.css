@@ -28,16 +28,16 @@
 }
 
 .ds-button--small {
-  padding: var(--density-action-spacing-padding-sm) var(--density-action-spacing-padding-md);
+  padding: var(--breakpoint-action-padding-default);
   font-size: var(--brand-font-size-xs);
 }
 
 .ds-button--medium {
-  padding: var(--density-action-spacing-padding-md) var(--density-action-spacing-padding-lg);
+  padding: var(--breakpoint-action-padding-default);
   font-size: var(--brand-font-size-sm);
 }
 
 .ds-button--large {
-  padding: var(--density-action-spacing-padding-lg) var(--density-action-spacing-padding-xl);
+  padding: var(--breakpoint-action-padding-default);
   font-size: var(--typography-button-label-size-lg);
 }
