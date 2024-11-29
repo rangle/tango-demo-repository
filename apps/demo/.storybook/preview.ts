@@ -46,7 +46,7 @@ const preview: Preview = {
     breakpoints: {
       name: "Breakpoints",
       description: "Breakpoints for Components",
-      defaultValue: "default",
+      defaultValue: "desktop",
       toolbar: {
         title: "Breakpoint",
         icon: "mobile",
