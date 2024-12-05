@@ -17,7 +17,8 @@ const preview: Preview = {
       toolbar: {
         title: "Brands",
         icon: "paintbrush",
-        items: ["brand-1"],
+        defaultValue: "brand-1",
+        items: ["brand-1", "hot-brand"],
         dynamicTitle: true,
       },
     },
