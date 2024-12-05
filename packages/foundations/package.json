@@ -5,7 +5,7 @@
   "main": "index.js",
   "exports": {
     ".": "./index.ts",
-    "./styles": "./styles/index.css"
+    "./styles": "./index.css"
   },
   "scripts": {
     "build": "radius-toolkit generate tokens.json -o styles/index.css"

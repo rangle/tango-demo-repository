@@ -5,7 +5,8 @@
   "exports": {
     ".": "./index.ts",
     "./button": "./components/button/button.tsx",
-    "./header": "./components/header/header.tsx"
+    "./header": "./components/header/header.tsx",
+    "./discount-card": "./components/discount-card/discount-card.tsx"
   },
   "license": "MIT",
   "scripts": {
