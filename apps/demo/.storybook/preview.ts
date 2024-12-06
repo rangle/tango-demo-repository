@@ -13,7 +13,7 @@ const preview: Preview = {
     brands: {
       name: "Brands",
       description: "Design System Supported Brands",
-      defaultValue: "Brand 1",
+      defaultValue: "brand-1",
       toolbar: {
         title: "Brands",
         icon: "paintbrush",
