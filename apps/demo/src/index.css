@@ -28,11 +28,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--semantic-static-background-color-default);
+    color: var(--semantic-static-text-color-default);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--semantic-static-text-color-default);
 }
 
 button {
@@ -54,6 +57,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.control {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
