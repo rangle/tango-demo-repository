@@ -1,7 +1,7 @@
 import './App.css'
 import { Button } from '@repo/ui'
 import "@repo/foundations/styles";
-import { useState } from 'react';
+import { useTheme } from './ThemeProvider';
 
 const LightModeIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
 )
@@ -18,28 +18,31 @@ const SecondaryBrandIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width=
 
 
 function App() {
-  const [brand, setBrand] = useState('brand-1');
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
-  const [breakpoint, setBreakpoint] = useState('desktop');
-  const density = 'default';
+  const { 
+    brand, 
+    mode, 
+    breakpoint, 
+    setBrand, 
+    setMode, 
+    setBreakpoint 
+  } = useTheme();
 
-  const bodyClasses = [brand, mode, density, breakpoint].join(" ");
 
   return (
-    <div className={bodyClasses}>
+    <main>
       <div>
         Radius Token Tango demo
       </div>
       <div></div>
       <h1>Kitchen Sink</h1>
-      <div>
-        <button title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'} onClick={() => setMode((state) => state === 'dark' ? 'light' : 'dark')}>
+      <div className='control'>
+        <button title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'} onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}>
           {mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </button>
-        <button title={breakpoint === 'desktop' ? 'Switch to mobile view' : 'Switch to desktop view'} onClick={() => setBreakpoint((state) => state === 'desktop' ? 'mobile' : 'desktop')}>
+        <button title={breakpoint === 'desktop' ? 'Switch to mobile view' : 'Switch to desktop view'} onClick={() => setBreakpoint(breakpoint === 'desktop' ? 'mobile' : 'desktop')}>
           {breakpoint === 'desktop' ? <MobileIcon /> : <DesktopIcon />}
         </button>
-        <button title={brand === 'brand-1' ? 'Switch to hot brand' : 'Switch to default brand'} onClick={() => setBrand((state) => state === 'brand-1' ? 'hot-brand' : 'brand-1')}>
+        <button title={brand === 'brand-1' ? 'Switch to hot brand' : 'Switch to default brand'} onClick={() => setBrand(brand === 'brand-1' ? 'hot-brand' : 'brand-1')}>
           {brand === 'brand-1' ? <SecondaryBrandIcon/> : <DefaultBrandIcon/>}
         </button>
       </div>
@@ -47,7 +50,7 @@ function App() {
         <Button label="Primary" variant='primary' />
         <Button label="Secondary" variant='secondary' />
       </div>
-    </div>
+    </main>
   )
 }
 
