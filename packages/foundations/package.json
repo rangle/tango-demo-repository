@@ -8,7 +8,9 @@
     "./styles": "./index.css"
   },
   "scripts": {
-    "build": "radius-toolkit generate tokens.json -o styles/index.css"
+    "build": "radius-toolkit generate tokens.json -o styles/index.css",
+    "build:custom": "radius-toolkit generate tokens.json -c myCustomTemplate -T ./templates -o styles/vector.json",
+    "build:tailwind": "radius-toolkit generate tokens.json -t tailwind"
   },
   "keywords": [],
   "author": "",
